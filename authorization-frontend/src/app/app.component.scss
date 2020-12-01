@@ -1,0 +1,27 @@
+header {
+    height: 100px;
+    background-color: #F5F5F6;
+    display:flex;
+    align-items:center;
+  }
+  .header-navigate{
+    display:flex;
+    align-items:center;
+    justify-content:flex-end;
+    flex-wrap:wrap;
+    a{
+      &:not(:last-child){
+        margin-right:30px;
+      }
+    }
+  }
+  .main-section {
+    min-height: calc(100vh - 200px);
+    padding: 40px 0 50px;
+    background-color: #ffffff;
+  }
+  footer {
+    height: 100px;
+    background-color: #cbcbcb;
+  }
+  

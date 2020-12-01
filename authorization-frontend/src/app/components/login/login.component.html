@@ -1,0 +1,29 @@
+<div class="container">
+  <h4 class="form-title">Come in</h4>
+    <form class="form-box"
+          [formGroup]="loginForm"
+          (ngSubmit)="loginCabinet()">
+
+      <mat-form-field class="example-from-filed">
+        <mat-label>Login</mat-label>
+        <input type="text" matInput formControlName="login" />
+        <mat-error *ngIf="login.hasError('required')">
+          Login is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="example-from-filed">
+        <mat-label>Password</mat-label>
+        <input type="password" matInput formControlName="password" autocomplete="on" />
+        <mat-error *ngIf="login.hasError('required')">
+          Password is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+
+      <p class="error-message">{{errorMessage}}</p>
+
+      <button mat-flat-button color="primary" [disabled]="loading">Login</button>
+      <mat-progress-bar mode="indeterminate" *ngIf="loading"></mat-progress-bar>
+    </form>
+  </div>
+  

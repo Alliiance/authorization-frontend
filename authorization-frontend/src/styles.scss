@@ -1,0 +1,44 @@
+html, body { height: 100%; }
+body { font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 1140px;
+  max-width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.form-title{
+  text-align: center;
+  color: #333333;
+  font-size:30px;
+  margin-bottom: 15px;
+}
+
+.form-box {
+  width: 300px;
+  max-width: 100%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+
+  .mat-form-field {
+    margin-bottom: 5px;
+  }
+
+  button.mat-flat-button{
+    margin:10px 0 15px;
+  }
+}
+.error-message{
+  color: red;
+  text-align: center;
+}

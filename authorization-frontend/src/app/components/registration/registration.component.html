@@ -1,0 +1,48 @@
+<div class="container">
+
+  <h4 class="form-title">Registration</h4>
+
+    <form class="form-box"
+          [formGroup]="registerForm"
+          (ngSubmit)="registerUser()">
+  
+      <mat-form-field class="example-from-filed">
+        <mat-label>Name</mat-label>
+        <input type="text" matInput formControlName="name" maxlength="225" required />
+        <mat-error *ngIf="registerForm.hasError('required', 'name')">
+          Name is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+  
+      <mat-form-field class="example-from-filed">
+        <mat-label>Login</mat-label>
+        <input type="text" matInput formControlName="login" maxlength="225" required />
+        <mat-error *ngIf="registerForm.hasError('required', 'login')">
+          Login is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+  
+      <mat-form-field>
+        <mat-label>Password</mat-label>
+        <input type="password" matInput formControlName="password" maxlength="225" autocomplete="on" required>
+        <mat-error *ngIf="registerForm.hasError('required', 'password')">
+          Please enter your newpassword
+        </mat-error>
+      </mat-form-field>
+  
+      <mat-form-field>
+        <mat-label>Confirm password</mat-label>
+        <input type="password" matInput formControlName="confirmPassword"  [errorStateMatcher]="matcher" autocomplete="on" maxlength="225" required>
+        <mat-error *ngIf="registerForm.hasError('notSame')">
+          Passwords do not match
+        </mat-error>
+      </mat-form-field>
+
+      <p class="error-message">{{errorMessage}}</p>
+  
+      <button mat-flat-button color="primary" [disabled]="loading">Registration</button>
+      <mat-progress-bar mode="indeterminate" *ngIf="loading"></mat-progress-bar>
+    </form>
+  </div>
+  
+  
